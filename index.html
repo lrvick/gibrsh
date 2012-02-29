@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/screen.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="/js/hyve/hyve.js" type="text/javascript"></script>
+        <script type="text/javascript">
+          var queries=['daht','mhee','dis','lawl'];
+          $(document).ready(function() {
+            $.each(queries, function(k,query){
+              hyve.stream(query,function(data){
+                $('#output').prepend($('<p>' + data.service +' : '+ data.text +' : <a href="'+ data.source+'">link</a></p>'));
+              },['twitter','facebook']);
+            });
+          });
+        </script>
+        <title>Gibrsh</title>
+    </head>
+    <body>
+        <h1>Gibrsh</h1>
+        <h2>Showcasing social media stupidity in real-time</h2>
+        <div id="output"></div>
+    </body>
+</html>
